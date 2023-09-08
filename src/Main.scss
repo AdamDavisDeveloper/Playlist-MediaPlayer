@@ -1,0 +1,34 @@
+#Main {
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+}
+#Disk {
+    h2 {
+        margin-bottom: 1rem;
+    }
+    img { 
+        width: 100%;
+        //border-radius: 50%;
+        margin-bottom: 1rem;
+     }
+}
+#PlayerWrapper {
+    width: 80%;
+    margin: auto;
+}
+
+@keyframes cover-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin {
+    animation: cover-spin infinite 20s linear;
+  }
+}
