@@ -18,6 +18,13 @@
     margin: auto;
 }
 
+#Back {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
 @keyframes cover-spin {
   from {
     transform: rotate(0deg);

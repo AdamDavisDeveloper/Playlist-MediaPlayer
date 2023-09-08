@@ -35,6 +35,11 @@ function App() {
               </audio>
           </div>
         </div>
+
+        <div id="Back">
+          <h3 style={{margin: 0}}>Thanks for listening</h3>
+            <p style={{margin: 0, marginTop: ".5rem"}}>Back to <a href="https://adams.land">adams.land</a>?</p>
+        </div>
       </div>
     </>
   )
