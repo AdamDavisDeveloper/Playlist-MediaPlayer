@@ -1,27 +1,42 @@
-//import { useRef, useState } from 'react';
-import './App.css' 
-import './Main.scss'; //@ts-ignore
+import { useState } from 'react';
+import './Scss/MainPlayer.scss';
 
 function MainPlayer() {
+    //@ts-ignore
+    const [ currentPlaylist, setCurrentPlaylist ] = useState("Spontaneous Combustion");
+
     return (
-        <>
-        
-        {/* Top Frame */}
+        <div id="MainPlayer">
+            {/* Top Frame */}
+            <div id="TopFrame">
+                <div className="left">2023</div>
+                <div className="center">Desc:</div>
+                <div className="right">1</div>
+            </div>
 
-        {/* Header */}
+            {/* Header */}
+            <header>
+                <div className="top"><h1>ADAM DAVIS</h1></div>
+                <div className="bottom"><h2>JUKEBOX</h2></div>
+            </header>
 
-        {/* PlaylistNavigator */}
+            {/* PlaylistNavigator */}
+            <div className="line"></div>
+            <div id="PlaylistNav">
+                <div className="title">{currentPlaylist}</div>
+            </div>
+            <div className="line"></div>
 
-        {/* Record Table / Cover Art */}
+            {/* Record Table / Cover Art */}
 
-        {/* Track List */}
+            {/* Track List */}
 
-        {/* Bottom Frame */}
+            {/* Bottom Frame */}
 
-        {/* Music Player */}
+            {/* Music Player */}
 
-        </>
-    )
-}
+        </div>
+    );
+};
 
 export default MainPlayer;

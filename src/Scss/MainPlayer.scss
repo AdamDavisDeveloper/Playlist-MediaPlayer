@@ -1,0 +1,54 @@
+.line {
+    margin: 2.25rem 0;
+    height: 2px;
+    background: #2E2E2E;
+}
+
+#MainPlayer {
+    padding-top: 5rem;
+    min-height: 100vh;
+    background: #ECE6D0;
+    padding: 5%;
+}
+
+#TopFrame {
+    width: 100%;
+    display: flex;
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        border: 2px solid #2E2E2E;
+        min-height: 6vh;
+    }
+    .left {
+        border-left: none;
+    }
+    .right {
+        border-right: none;
+    }
+
+}
+
+// Main Header (Adam Davis Jukebox)
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .top, .bottom {
+        h1, h2 { 
+            font-size: 3.25rem;
+            font-family: "Iowan Old Style";
+            margin: 0;
+        }
+        h1 { font-weight: 700; }
+        h2 { 
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 21.06px;
+            line-height: .4em;
+            transform: translateX(12px);
+        }
+    }
+}
