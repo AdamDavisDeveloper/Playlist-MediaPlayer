@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import LeftArrow from './assets/LeftArrowBlack.svg'
-import RightArrow from './assets/RightArrowBlack.svg'
+import { useEffect, useState } from 'react';
 import CoverTest from './assets/cover-test.png'
 import './Scss/MainPlayer.scss';
+// Components
+import PlaylistNavigator from './Components/PlaylistNavigator';
 
 
 const TrackList = [
@@ -22,20 +22,35 @@ const TrackList = [
         title: "no way out",
         artist: "ivri"
     },
+    {
+        title: "no way out",
+        artist: "ivri"
+    },
+    {
+        title: "no way out",
+        artist: "ivri"
+    },
+    {
+        title: "no way out",
+        artist: "ivri"
+    },
 ]
 
 function MainPlayer() {
     //@ts-ignore
-    const [ currentPlaylist, setCurrentPlaylist ] = useState("Spontaneous Combustion");
+    const [ currentPlaylist, setCurrentPlaylist ]   = useState("Spontaneous Combustion");
+    const [ highlightColor, setHighlightColor ]     = useState("#F75C03");
+
+    useEffect(() => {
+        setHighlightColor("#F75C03"); // change based on Playlist data (handcoded w/ love)
+    }, []);
 
     const TrackSelector = () => {
-        const tracks = TrackList.map((track) => {
+        const tracks = TrackList.map((track, i) => {
             return (
-                <>
-                <div className="track">
+                <div className="track" key={i}>
                     <button> {track.title} - {track.artist} </button>
                 </div>
-                </>
             )
         });
 
@@ -44,6 +59,10 @@ function MainPlayer() {
 
     return (
         <div id="MainPlayer">
+            {/* Number */}
+            <div id="Number">
+                <span style={{color: `${highlightColor}`}}>017756</span>
+            </div>
             {/* Top Frame */}
             <div id="TopFrame">
                 <div className="left">2023</div>
@@ -59,11 +78,10 @@ function MainPlayer() {
 
             {/* PlaylistNavigator */}
             <div className="line"></div>
-            <div id="PlaylistNav">
-                <button><img src={LeftArrow} alt="Left arrow button" /></button>
-                <div className="title"><h3>{currentPlaylist}</h3></div>
-                <button><img src={RightArrow} alt="Right arrow button" /></button>
-            </div>
+            <PlaylistNavigator 
+                currentPlaylist={currentPlaylist}
+                highlightColor={highlightColor}
+            />
             <div className="line"></div>
 
             {/* Record Table / Cover Art */}
@@ -78,6 +96,11 @@ function MainPlayer() {
             </div>
 
             {/* Bottom Frame */}
+            <div id="BottomFrame">
+                <div className="left"></div>
+                <div className="center">Desc:</div>
+                <div className="right">1</div>
+            </div>
 
             {/* Music Player */}
 

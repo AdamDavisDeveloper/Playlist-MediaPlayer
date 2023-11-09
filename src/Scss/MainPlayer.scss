@@ -8,7 +8,12 @@ h4 {
     font-size: 1rem;
     font-weight: 500;
     margin: 0;
- }
+}
+
+a, button {
+    text-decoration: none;
+    color: #2E2E2E;
+}
 
 .line {
     margin: .5rem 0;
@@ -16,16 +21,29 @@ h4 {
     background: #2E2E2E;
 }
 
+#Number {
+    width: 100%;
+    text-align: right;
+    span {
+        font-size: 1.15rem;
+        font-weight: 700;
+        opacity: 80%;
+    }
+}
+
 #MainPlayer {
     color: #2E2E2E;
     height: 100vh;
     background: #ECE6D0;
     padding: 5%;
-    padding-top: 3.5rem;
+    //padding-top: 3.5rem;
     text-align: center;
+    > span {
+        text-align: right;
+    }
 }
 
-#TopFrame {
+#TopFrame, #BottomFrame {
     width: 100%;
     display: flex;
     > div {
@@ -36,6 +54,9 @@ h4 {
         border: 2px solid #2E2E2E;
         min-height: 6vh;
     }
+}
+
+#TopFrame {
     .left {
         border-left: none;
     }
@@ -43,6 +64,24 @@ h4 {
         border-right: none;
     }
 
+}
+
+#BottomFrame {
+    min-height: 10vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .left {
+        border-bottom: none;
+        border-left: none;
+    }
+    .right {
+        border-bottom: none;
+        border-right: none;
+    }
+    .center {
+        flex: 2;
+    }
 }
 
 // Main Header (Adam Davis Jukebox)
@@ -73,6 +112,7 @@ header {
  justify-content: space-between;
  align-items: center;
  button {
+    color: #2E2E2E;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -87,6 +127,8 @@ header {
 #AllTracks {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    max-height: 26vh;
     button {
         font-weight: 700;
         font-size: 1rem;
