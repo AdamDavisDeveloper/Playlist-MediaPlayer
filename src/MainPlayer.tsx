@@ -3,6 +3,7 @@ import CoverTest from './assets/cover-test.png'
 import './Scss/MainPlayer.scss';
 // Components
 import PlaylistNavigator from './Components/PlaylistNavigator';
+import TrackSelector from './Components/TrackSelector';
 
 
 const TrackList = [
@@ -30,10 +31,6 @@ const TrackList = [
         title: "no way out",
         artist: "ivri"
     },
-    {
-        title: "no way out",
-        artist: "ivri"
-    },
 ]
 
 function MainPlayer() {
@@ -44,18 +41,6 @@ function MainPlayer() {
     useEffect(() => {
         setHighlightColor("#F75C03"); // change based on Playlist data (handcoded w/ love)
     }, []);
-
-    const TrackSelector = () => {
-        const tracks = TrackList.map((track, i) => {
-            return (
-                <div className="track" key={i}>
-                    <button> {track.title} - {track.artist} </button>
-                </div>
-            )
-        });
-
-        return <div id="AllTracks">{ tracks }</div>;
-    };
 
     return (
         <div id="MainPlayer">
@@ -92,7 +77,7 @@ function MainPlayer() {
             {/* Track List */}
             <h4>Title</h4>
             <div id="TrackList">
-                { TrackSelector() }
+                <TrackSelector trackList={TrackList} />
             </div>
 
             {/* Bottom Frame */}
